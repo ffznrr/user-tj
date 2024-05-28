@@ -24,14 +24,13 @@ const Category = () => {
     } else if (isi === "makanan") {
       filtered = barang.msg.filter((data) => data.kategori === "makanan");
     } else {
-      filtered = barang.msg; // show all products if no category selected
+      filtered = barang.msg;
     }
-
     setFilterProduct(filtered);
   };
 
   const DetailPage = (product) => {
-    console.log(product);
+    window.location.href = `/detailpage/${product.id}`;
   };
 
   return (
@@ -68,12 +67,7 @@ const Category = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">
-                {product.nama_barang}
-                {product.isNew && (
-                  <div className="badge badge-secondary">NEW</div>
-                )}
-              </h2>
+              <h2 className="card-title">{product.nama_barang}</h2>
               <p>{product.description}</p>
               <div className="card-actions justify-end">
                 <div className="badge badge-outline">{product.kategori}</div>

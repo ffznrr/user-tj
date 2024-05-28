@@ -8,6 +8,13 @@ export const Store = create((set) => ({
     const response = await fetch("http://localhost:4000/api/getbarang");
     const barang = await response.json();
     await set({ barang });
-    set({ isLoading: true });
+    set({ isLoading: false });
+  },
+  detailProduct: {},
+
+  setDetailProduct: async (id) => {
+    const response = await fetch(`http://localhost:4000/api/barangid/${id}`);
+    const detailProduct = await response.json();
+    await set({ detailProduct });
   },
 }));
