@@ -28,8 +28,16 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div>
-            <button className="border m-2 rounded-xl px-5 py-2 hover:bg-black hover:text-white">
+          <div className="flex">
+            <img
+              className="w-10 h-10 m-2"
+              src="/cart.png"
+              alt="cart"
+            />
+            <button
+              onClick={() => (window.location.href = "/login")}
+              className="border m-2 rounded-xl px-5 py-2 hover:bg-black hover:text-white"
+            >
               Login
             </button>
           </div>
@@ -97,7 +105,12 @@ const Navbar = () => {
           </div>
           <div className="p-2">
             <ul>
-              <li className="mb-2 text-2xl hover:text-white hover:outline-1 hover-outline">
+              <li
+                onClick={() => {
+                  window.location.href = "/";
+                }}
+                className="mb-2 text-2xl hover:text-white hover:outline-1 hover-outline"
+              >
                 Home
               </li>
               <li className="mb-2 text-2xl hover:text-white hover:outline-1 hover-outline">
@@ -109,7 +122,15 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="p-2">
-            <button className="border rounded-xl px-5 py-2 hover:bg-black hover:text-white">
+            <img
+              className="w-10 h-10 m-2"
+              src="/cart.png"
+              alt="cart"
+            />
+            <button
+              onClick={() => (window.location.href = "/login")}
+              className="border rounded-xl px-5 py-2 hover:bg-black hover:text-white"
+            >
               Login
             </button>
           </div>

@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import axios from "axios";
 
 export const Store = create((set) => ({
   barang: [],
@@ -16,5 +17,18 @@ export const Store = create((set) => ({
     const response = await fetch(`http://localhost:4000/api/barangid/${id}`);
     const detailProduct = await response.json();
     await set({ detailProduct });
+  },
+
+  login: {},
+  setLogin: async (username, password) => {
+    try {
+      const response = await axios.post("http://localhost:4000/api/login", {
+        username: username,
+        password: password,
+      });
+      await set({ login: response.data.token });
+    } catch (error) {
+      console.error("Failed to login:", error);
+    }
   },
 }));
